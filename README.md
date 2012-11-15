@@ -40,8 +40,12 @@ Most of the Pouch API is exposed as `fun(arg, [options], [callback])` Where both
 This method gets an existing database if one exists or creates a new one if one does not exist. The protocol field denotes which backend you want to use (currently only http and indexeddb are supported)
 
 <pre>
+var localDB
 Pouch('idb://test', function(err, db) {
-  // Use db to call further functions
+  if(!err){
+   localDB = db; //use localDB to call it later
+   // Use db to call further functions on creation
+  }
 })
 </pre>
 
@@ -289,7 +293,7 @@ db.info(function(err, info) {
 ## Listen to database changes
 
    db.changes(options)
-
+   db.changes(options, callback)
 A list of changes made to documents in the database, in the order they were made.
 
 * `options.include_docs`: Include the associated document with each change
@@ -350,11 +354,16 @@ db.changes(options, function(err, response) {
 ## Replicate a database
 
     Pouch.replicate(from, to, [callback])
+    db.replicate.to(otherDB,callback)
 
 <pre>
 Pouch.replicate('idb://mydb', 'http://localhost:5984/mydb', function(err, changes) {
   //
 })
+/* or if you have 2 databases called localDB and remoteDB */
+localDB.replicate.to(remoteDB, function(err, changes){
+  //
+});
 </pre>
 
 ## Node.js
