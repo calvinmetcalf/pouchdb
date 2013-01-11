@@ -358,7 +358,11 @@ var ajax = function ajax(options, callback) {
     dataType: 'json',
     timeout: 10000
   };
-  options = $.extend({}, defaults, options);
+  for(var key in defaults){
+    if (!options[key]) {
+     options[key]=defaults[key]; 
+    }
+  }
 
   if (options.data && typeof options.data !== 'string') {
     options.data = JSON.stringify(options.data);
