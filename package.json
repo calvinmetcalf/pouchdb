@@ -40,7 +40,8 @@
     "qunit": "*",
     "corsproxy": "*",
     "http-proxy": "*",
-    "http-server": "*"
+    "http-server": "*",
+    "tin": "~0.3.1"
   },
   "maintainers": [
     {
