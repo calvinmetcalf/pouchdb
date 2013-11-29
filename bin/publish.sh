@@ -3,7 +3,7 @@
 git checkout -b build
 echo "module.exports = '"$1"';" > src/version.js
 npm run build
-git add dist
+git add dist -f
 git add src/version.js
 git add package.json
 git add bower.json
