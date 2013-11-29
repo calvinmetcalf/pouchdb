@@ -22,9 +22,9 @@
     "request": "*"
   },
   "jam": {
-    "main": "dist/pouchdb.amd-nightly.js",
+    "main": "dist/pouchdb-nightly.js",
     "include": [
-      "dist/pouchdb.amd-nightly.js",
+      "dist/pouchdb-nightly.js",
       "README.md",
       "LICENSE"
     ],

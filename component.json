@@ -2,11 +2,15 @@
   "name": "pouchdb",
   "repo": "daleharvey/pouchdb",
   "description": "PouchDB is a pocket-sized database.",
-  "version": "0.0.1",
-  "keywords": [],
+  "version": "0.0.0",
+  "keywords": [
+    "db",
+    "couchdb",
+    "pouchdb"
+  ],
   "dependencies": {},
   "development": {},
-  "license": "MIT",
+  "license": "Apache",
   "main": "dist/pouchdb-nightly.js",
   "scripts": [
     "dist/pouchdb-nightly.js"
